@@ -1,4 +1,17 @@
-
+"""
+Phase 2a: Exploratory Data Analysis (PySpark)
+-----------------------------------------------
+Profiles trips_with_delay.parquet (output of generate_synthetic_delays.py):
+  - null counts + cardinality per column (data quality assessment)
+  - describe() + groupBy/agg statistical measures (mean, median, std,
+    skewness, kurtosis) using native PySpark functions
+  - IQR-based outlier detection on delay_minutes
+  - visualisations: convert to Pandas ONLY at the final plotting step
+    (as required by the brief), save PNGs to docs/figures/
+ 
+Run after generate_synthetic_delays.py has produced
+data/processed/trips_with_delay.parquet.
+"""
 
 import os
 from pyspark.sql import SparkSession
