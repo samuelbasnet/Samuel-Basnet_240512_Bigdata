@@ -1,0 +1,17 @@
+# Raw data
+data/raw/
+data/processed/
+
+# Spark output
+data/processed/
+
+# Spark metadata
+_SUCCESS
+_SUCCESS.crc
+*.crc
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
