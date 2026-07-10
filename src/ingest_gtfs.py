@@ -1,17 +1,3 @@
-"""
-Phase 1: GTFS Ingestion (PySpark)
-----------------------------------
-Loads real BODS GTFS timetable data for one region, joins the core tables,
-and demonstrates the distributed-computing requirements from the brief:
-partitioning, caching, repartitioning, and Spark UI-visible stage execution.
-
-Run this AFTER downloading a regional GTFS zip into data/raw/gtfs/
-(see README.md Step 1).
-
-While this runs, open http://localhost:4040 in a browser and screenshot the
-"Stages" tab and "Storage" tab (for the cached DataFrame) — the brief
-requires at least one Spark UI screenshot showing partition utilisation.
-"""
 
 import os
 from pyspark.sql import SparkSession
