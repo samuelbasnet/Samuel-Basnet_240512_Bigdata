@@ -61,6 +61,8 @@ def build_spark_session():
         SparkSession.builder
         .appName("Synthetic_Delay_Augmentation")
         .config("spark.sql.shuffle.partitions", "8")
+        .config("spark.driver.memory", "4g")
+        .config("spark.driver.maxResultSize", "2g")
         .getOrCreate()
     )
     spark.sparkContext.setLogLevel("WARN")
