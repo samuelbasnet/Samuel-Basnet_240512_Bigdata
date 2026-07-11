@@ -8,7 +8,7 @@ Profiles trips_with_delay.parquet (output of generate_synthetic_delays.py):
   - IQR-based outlier detection on delay_minutes
   - visualisations: convert to Pandas ONLY at the final plotting step
     (as required by the brief), save PNGs to docs/figures/
- 
+
 Run after generate_synthetic_delays.py has produced
 data/processed/trips_with_delay.parquet.
 """
@@ -34,6 +34,8 @@ def build_spark_session():
         SparkSession.builder
         .appName("EDA_Bus_Delay")
         .config("spark.sql.shuffle.partitions", "8")
+        .config("spark.driver.memory", "4g")
+        .config("spark.driver.maxResultSize", "2g")
         .getOrCreate()
     )
     spark.sparkContext.setLogLevel("WARN")
